@@ -15,6 +15,7 @@ on:
   
 env:
   UPLOAD_FIRMWARE: true
+  UPLOAD_BIN_DIR: true
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
 
