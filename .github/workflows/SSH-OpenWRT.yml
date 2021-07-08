@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: BUILD OPENWRT SSH
+name: Build OpenWRT in SSH
 
 # Controls when the workflow will run
 on:
