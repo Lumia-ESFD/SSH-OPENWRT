@@ -45,7 +45,7 @@ jobs:
           
       - name: Build
         run: |
-          cd openwrt && make V=s -j$(nproc)
+          cd openwrt && make -j$(nproc)
           
       - name: Upload firmware directory
         uses: actions/upload-artifact@v2
