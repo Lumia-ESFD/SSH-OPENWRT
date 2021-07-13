@@ -13,10 +13,10 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
             inputs:
-              FileName:
+              OutPutFiles:
                 description: 'Output File Name'     
                 required: true
-                default: 'OpenWRT'
+                default: 'OpenWrt'
   
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -50,7 +50,7 @@ jobs:
       - name: Upload firmware directory
         uses: actions/upload-artifact@v2
         with:
-          name: ${{FileName}}
+          name: ${{ github.event.inputs.OutPutFiles }}
           path: openwrt/bin/targets/*/*/*.*
 
       # Runs a single command using the runners shell
