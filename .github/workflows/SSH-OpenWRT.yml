@@ -13,7 +13,7 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
             inputs:
-              outputfiles:
+              FileName:
                 description: 'Output File Name'     
                 required: true
                 default: 'OpenWRT'
@@ -50,7 +50,7 @@ jobs:
       - name: Upload firmware directory
         uses: actions/upload-artifact@v2
         with:
-          name: ${{outputfiles}}
+          name: ${{FileName}}
           path: openwrt/bin/targets/*/*/*.*
 
       # Runs a single command using the runners shell
