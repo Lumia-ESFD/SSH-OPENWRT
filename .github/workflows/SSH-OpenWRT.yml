@@ -41,11 +41,11 @@ jobs:
 
       - name: Download package
         run: |
-          cd openwrt && make download -j3
+          cd openwrt && make download -j3 V=s
           
       - name: Build
         run: |
-          cd openwrt && make -j$(nproc)
+          cd openwrt && make -j$(nproc) V=s
           
       - name: Upload firmware directory
         uses: actions/upload-artifact@v2
