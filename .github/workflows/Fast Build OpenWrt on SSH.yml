@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Fast Build OpenWrt in SSH
+name: Fast Build OpenWrt on SSH
 
 # Controls when the workflow will run
 on:
@@ -44,7 +44,7 @@ jobs:
           
       - name: Build
         run: |
-          cd openwrt && make -j1 V=s
+          cd openwrt && make j$(($(nproc) + 1)) V=s
           
       - name: Upload firmware directory
         uses: actions/upload-artifact@v2
